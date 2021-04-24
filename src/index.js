@@ -9,12 +9,12 @@ import movies from "./reducers";
 //store need reducer as an argument
 const store = createStore(movies);
 console.log("store", store);
-console.log("Before State", store.getState());
+// console.log("Before State", store.getState());
 
-store.dispatch({
-  type: "ADD_MOVIES",
-  movies: [{ name: "superman" }],
-});
-console.log("After State", store.getState());
+// store.dispatch({
+//   type: "ADD_MOVIES",
+//   movies: [{ name: "superman" }],
+// });
+// console.log("After State", store.getState());
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App store={store}/>, document.getElementById("root"));
