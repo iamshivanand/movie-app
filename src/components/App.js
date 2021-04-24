@@ -2,6 +2,7 @@ import React from "react";
 import data from "../data.js";
 import Navbar from "./Navbar";
 import MovieCard from "./MovieCard";
+import { addMovies } from "../actions";
 
 class App extends React.Component {
   componentDidMount() {
@@ -10,14 +11,12 @@ class App extends React.Component {
     store.subscribe(() => {
       console.log("Updated Succesfully");
     });
+    //this force update will rerender our whole app component
     this.forceUpdate();
     //make an api call
 
     //dispatch action
-    store.dispatch({
-      type: "ADD_MOVIES",
-      movies: data,
-    });
+    store.dispatch(addMovies(data));
 
     console.log("State", store.getState());
   }
