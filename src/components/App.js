@@ -5,7 +5,9 @@ import MovieCard from "./MovieCard";
 import { addMovies, ShowFavourites } from "../actions";
 
 class App extends React.Component {
+
   componentDidMount() {
+    console.log("hello");
     const { store } = this.props;
 
     store.subscribe(() => {
@@ -21,10 +23,11 @@ class App extends React.Component {
 
     console.log("State", store.getState());
   }
+  
   isFavourite = (movie) => {
-    const { favourites } = this.props.store.getState();
+    const { movies } = this.props.store.getState();
 
-    const index = favourites.indexOf(movie);
+    const index = movies.favourites.indexOf(movie);
 
     if (index !== -1) {
       //movie found
@@ -39,9 +42,12 @@ class App extends React.Component {
   };
 
   render() {
-    const { list, favourites, ShowFavourites } = this.props.store.getState();
+    const { movies } = this.props.store.getState();
     console.log("Render", this.props.store.getState());
+    const { list, favourites, ShowFavourites } = movies;
+
     const displayMovies = ShowFavourites ? favourites : list;
+
     return (
       <div className="App">
         <Navbar />
