@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -29,13 +29,13 @@ body {
 .search-container {
   position: relative;
 }
-.search-results {
+.search-result {
   position: absolute;
   background: #fff;
-  width: 100%;
+  width: 660px;
   box-sizing: border-box;
   border: 1px solid #e1e1e1;
-  top: 42px;
+  top: 60px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   z-index: 100;
